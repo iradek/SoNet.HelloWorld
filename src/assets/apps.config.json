@@ -1,0 +1,12 @@
+{
+    "_comments": "You can edit this file to customize configuration values",
+    "api_baseUrl": "https://www.sonet.com",
+    "oauth_client_id": "a2d2ff9e-623e-4ead-8825-d5055c5baabf",
+    "oauth_client_secret": "aBPC8JuAL7bGXajdv_tsDQ",
+    "siteName": "SampleSite",
+    "userName": "Admin",
+    "userPassword": "",
+    "passwordAlreadyEncrypted": false,
+    "oAuthGrant": "ClientCredentials",
+    "logging": false
+}

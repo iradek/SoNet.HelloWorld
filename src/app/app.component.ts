@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MySoNetApiClient } from './services/sonet-api-client.service';
+import { SoNetAppsConfig } from '@iradek/sonet-appskit';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'iradek-sonet-helloworld';
+export class AppComponent implements OnInit {
+    title = 'iradek-sonet-helloworld';
+    engineSettings$: Promise<any>;
+
+    constructor(public sonetAppsConfig: SoNetAppsConfig, private mySonetApiClient: MySoNetApiClient) {
+    }
+
+    ngOnInit(): void {
+        this.engineSettings$ = this.mySonetApiClient.getSettingsAsync();
+    }
+
 }
