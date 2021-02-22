@@ -2,7 +2,7 @@
 <h1>Hello World with SoNET</h1>
 
 <h4>Current apps config:</h4>
-<pre>{{sonetAppsConfig | json}}</pre>
+<pre>{{sonetConfig | json}}</pre>
 
 <div *ngIf="engineSettings$ | async as engineSettings; else loading">
     <h4>Engine settings:</h4>

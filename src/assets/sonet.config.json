@@ -1,0 +1,11 @@
+{
+    "api_baseUrl": "https://www.sonet.com",
+    "oauth_client_id": "fe150937-162d-4398-a046-466651cb1103",
+    "oauth_client_secret": "VkGUFkFBbN8HGmLbtDts7w",
+    "oAuthGrant": "ClientCredentials",
+    "siteName": "SampleSite",
+    "userName": "Admin",
+    "userPassword": "",
+    "passwordAlreadyEncrypted": false,    
+    "logging": false
+}

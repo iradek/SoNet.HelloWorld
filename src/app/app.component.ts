@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MySoNetApiClient } from './services/sonet-api-client.service';
-import { SoNetAppsConfig } from '@iradek/sonet-appskit';
+import { SoNetConfigService } from '@iradek/sonet-appskit';
 
 @Component({
     selector: 'app-root',
@@ -11,11 +11,15 @@ export class AppComponent implements OnInit {
     title = 'iradek-sonet-helloworld';
     engineSettings$: Promise<any>;
 
-    constructor(public sonetAppsConfig: SoNetAppsConfig, private mySonetApiClient: MySoNetApiClient) {
+    sonetConfig = SoNetConfigService.Config;
+
+    constructor(private mySonetApiClient: MySoNetApiClient, private sonetConfigService: SoNetConfigService) {
+        console.log("config in constructor",  sonetConfigService.config);
+        mySonetApiClient.getSettingsAsync().then(settings=>console.log("setting from api", settings));
     }
 
-    ngOnInit(): void {
-        this.engineSettings$ = this.mySonetApiClient.getSettingsAsync();
+    ngOnInit(): void {                      
+        console.log("sonet config", this.sonetConfigService.config);
     }
 
 }
