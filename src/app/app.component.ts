@@ -13,13 +13,12 @@ export class AppComponent implements OnInit {
 
     sonetConfig = SoNetConfigService.Config;
 
-    constructor(private mySonetApiClient: MySoNetApiClient, private sonetConfigService: SoNetConfigService) {
-        console.log("config in constructor",  sonetConfigService.config);
-        mySonetApiClient.getSettingsAsync().then(settings=>console.log("setting from api", settings));
+    constructor(private mySonetApiClient: MySoNetApiClient) {        
     }
 
     ngOnInit(): void {                      
-        console.log("sonet config", this.sonetConfigService.config);
+        this.engineSettings$ = this.mySonetApiClient.getSettingsAsync();
+        
     }
 
 }
